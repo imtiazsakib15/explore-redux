@@ -2,11 +2,11 @@ import { createStore } from "redux";
 
 const INCREMENT = "INCREMENT";
 const DECREMENT = "DECREMENT";
-const ADD_USER = "ADD_USER";
+// const ADD_USER = "ADD_USER";
 
 // State
 const initialCounterState = { count: 0 };
-const initialUsersState = { users: [{ name: "Sakib" }] };
+// const initialUsersState = { users: [{ name: "Sakib" }] };
 
 // Action ---> {type, payload}
 
@@ -18,12 +18,12 @@ const decrementCounter = () => {
   return { type: DECREMENT };
 };
 
-const addUser = () => {
-  return {
-    type: ADD_USER,
-    payload: { name: "abcde" },
-  };
-};
+// const addUser = () => {
+//   return {
+//     type: ADD_USER,
+//     payload: { name: "abcde" },
+//   };
+// };
 
 // create reducer for counter
 const counterReducer = (state = initialCounterState, action) => {
