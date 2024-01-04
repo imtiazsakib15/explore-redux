@@ -6,17 +6,17 @@ import {
 } from "../services/actions/counterActions";
 
 const Counter = () => {
-  const count = useSelector((state) => state.count);
+  const count = useSelector((state) => state.counterReducer.count);
   const dispatch = useDispatch();
 
   const handleIncrement = () => {
     dispatch(incrementCounter());
   };
   const handleReset = () => {
-    dispatch(resetCounter())
+    dispatch(resetCounter());
   };
   const handleDecrement = () => {
-    dispatch(decrementCounter())
+    dispatch(decrementCounter());
   };
 
   return (
@@ -46,7 +46,6 @@ const Counter = () => {
 };
 
 export default Counter;
-
 
 /**
  * 1. state    -> { count : 0 }
