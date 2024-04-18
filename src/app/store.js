@@ -3,15 +3,19 @@ import counterReducer from "../features/counter/counterSlice";
 import postReducer from "../features/posts/postSlice";
 import reduxLogger from "redux-logger";
 import logger from "./middlewares/logger";
+import baseApi from "../features/api/baseApi";
 
 const store = configureStore({
   reducer: {
     counter: counterReducer,
     posts: postReducer,
+    [baseApi.reducerPath]: baseApi.reducer,
   },
-  middleware: (getDefaultMiddleware) =>
+  middleware: (getDefaultMiddleware) =>{
     // getDefaultMiddleware().concat(reduxLogger),
     getDefaultMiddleware().concat(logger),
+    getDefaultMiddleware().concat(baseApi.middleware)
+  }
 });
 
 export default store;
