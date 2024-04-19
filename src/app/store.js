@@ -11,11 +11,11 @@ const store = configureStore({
     posts: postReducer,
     [baseApi.reducerPath]: baseApi.reducer,
   },
-  middleware: (getDefaultMiddleware) =>{
+  middleware: (getDefaultMiddleware) => {
     // getDefaultMiddleware().concat(reduxLogger),
-    getDefaultMiddleware().concat(logger),
-    getDefaultMiddleware().concat(baseApi.middleware)
-  }
+    return getDefaultMiddleware().concat(logger).concat(baseApi.middleware);
+    // getDefaultMiddleware().concat(baseApi.middleware);
+  },
 });
 
 export default store;
