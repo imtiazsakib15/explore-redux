@@ -1,4 +1,4 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query";
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseApi = createApi({
   reducerpath: "api",
@@ -7,7 +7,7 @@ const baseApi = createApi({
   }),
   endpoints: (builder) => ({
     getPosts: builder.query({
-      query: (name) => `/posts`,
+      query: () => `/posts`,
     }),
   }),
 });

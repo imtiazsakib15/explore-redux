@@ -10,8 +10,8 @@ function App() {
     <>
       {/* <Counter />
       <Todos /> */}
-      <Posts />
       <CounterView />
+      <Posts />
       <PostView />
     </>
   );

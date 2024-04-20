@@ -13,8 +13,8 @@ const store = configureStore({
   },
   middleware: (getDefaultMiddleware) => {
     // getDefaultMiddleware().concat(reduxLogger),
-    return getDefaultMiddleware().concat(logger).concat(baseApi.middleware);
-    // getDefaultMiddleware().concat(baseApi.middleware);
+    // return getDefaultMiddleware().concat(logger);
+    return getDefaultMiddleware().concat(baseApi.middleware);
   },
 });
 
