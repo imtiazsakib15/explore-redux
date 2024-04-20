@@ -1,4 +1,5 @@
 import { useGetPostsQuery } from "../features/api/baseApi";
+import PostCard from "./PostCard";
 
 const Posts = () => {
   const { data: posts, error, isLoading } = useGetPostsQuery();
@@ -18,10 +19,7 @@ const Posts = () => {
       {posts && (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 py-8">
           {posts?.map((post) => (
-            <div key={post.id} className="border-2 p-4">
-              <h4 className="text-xl font-bold">{post.title}</h4>
-              <p>{post.body}</p>
-            </div>
+            <PostCard key={post.id} post={post} />
           ))}
         </div>
       )}

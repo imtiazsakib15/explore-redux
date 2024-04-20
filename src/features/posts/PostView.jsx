@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts } from "./postSlice";
+import PostCard from "../../components/PostCard";
 
 const PostView = () => {
   const { isLoading, posts, error } = useSelector((state) => state.posts);
@@ -23,10 +24,7 @@ const PostView = () => {
       {posts && (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 py-8">
           {posts?.map((post) => (
-            <div key={post.id} className="border-2 p-4">
-              <h4 className="text-xl font-bold">{post.title}</h4>
-              <p>{post.body}</p>
-            </div>
+            <PostCard key={post.id} post={post} />
           ))}
         </div>
       )}
